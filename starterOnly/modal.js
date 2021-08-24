@@ -1,10 +1,10 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
 }
 
 // DOM Elements
@@ -17,13 +17,23 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+    modalbg.style.display = "block";
 }
 
-var modal = document.getElementById('Modal-content');
+// Ici commence mon code
 
-window.onclick = function(event) {
-  if (event.target == modal) {
+
+
+// Close Modal form
+
+const modal = document.getElementById("Modal-content");
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+function closeModal() {
     modal.style.display = "none";
-  }
 }
