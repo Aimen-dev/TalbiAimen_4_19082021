@@ -20,3 +20,10 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
+var modal = document.getElementById('Modal-content');
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
