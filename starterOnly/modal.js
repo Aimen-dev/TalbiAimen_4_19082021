@@ -22,13 +22,11 @@ function launchModal() {
 
 // Ici commence mon code
 
-
-
 // Close Modal form
 
 const modal = document.getElementById("Modal-content");
 
-window.onclick = function (event) {
+document.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
