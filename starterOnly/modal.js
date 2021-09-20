@@ -60,9 +60,9 @@ let erreur = 0;
 form.addEventListener('submit', validate);
 
 // fonction valider le formulaire 
-function validate(e) {
+function validate(a) {
 
-    e.preventDefault();
+    a.preventDefault();
   
     let isFirstNameValid = false;
     let isLastNameValid = false;
@@ -71,3 +71,107 @@ function validate(e) {
     let isQuantityValid = false;
     let isGetRadioButtonValid = false;
     let isConditionUserValid = false;
+  
+    // Vérification du champ PRENOM
+    if(А() == ""){
+      errorFirstName.innerHTML = "Vous devez écrire votre prénom.";
+      firstName.style.border = "2px solid #fe152f";
+      isFirstNameValid = false;
+    } else if (firstnameRegExp.test(firstName.value)){
+      errorFirstName.innerHTML = "Votre prénom ne doit pas comporter de chiffres ou de symboles.";
+      firstName.style.border = "2px solid #fe152f";
+      isFirstNameValid = false;
+    }
+    else {
+      isFirstNameValid = true;
+      errorFirstName.innerHTML = "";
+      firstName.style.border = "";
+    }
+  
+    // Vérification du champ NOM
+    if(lastName.value.trim() ==""){
+      errorLastName.innerHTML = "Vous devez écrire votre nom.";
+      lastName.style.border ="2px solid #fe152f";
+      isLastNameValid = false;
+    } else if (lastnameRegExp.test(lastName.value)){
+      errorLastName.innerHTML = "Votre nom ne doit pas comporter de chiffres ou de symboles.";
+      lastName.style.border ="2px solid #fe152f";
+      isLastNameValid = false;
+    }
+      else {
+      isLastNameValid = true;
+      errorLastName.innerHTML = "";
+      lastName.style.border ="";
+    }
+    
+    // Vérification du champ EMAIL
+    if(eMail.value.trim() ==""){
+      erroreMail.innerHTML = "Vous devez écrire votre e-mail.";
+      eMail.style.border ="2px solid #fe152f";
+      isEmailValid = false;
+    } else if (eMail.value.trim() === emailIsValid){
+      erroreMail.innerHTML = "L'e-mail saisi est incorrect.";
+      eMail.style.border ="2px solid #fe152f";
+      isEmailValid = false;
+    }else{
+      isEmailValid = true;
+      erroreMail.innerHTML = "";
+      eMail.style.border ="";
+    }
+  
+    // Vérification du champ ANNIVERSAIRE
+    if(birthDate.value.trim() ==""){
+      errorBirthdate.innerHTML = "Vous devez renseigner votre date d'anniversaire.";
+      birthDate.style.border ="2px solid #fe152f";
+      isBirthDateValid = false;
+    }else{
+      isBirthDateValid = true;
+      errorBirthdate.innerHTML = "";
+      birthDate.style.border ="";
+    }
+  
+    // Vérification du champ NOMBRE EVENEMENT
+    if(quantity.value.trim() ==""){
+      errorQuantity.innerHTML = "Vous devez préciser à combien d'évènement auquel vous avez participé.";
+      quantity.style.border ="2px solid #fe152f";
+      isQuantityValid = false;
+    }else{
+      isQuantityValid = true;
+      errorQuantity.innerHTML = "";
+      quantity.style.border ="";
+      }
+  
+    // Vérification du champ CHOIX DE VILLES
+    if(getRadioButton(form.elements["location"]) == undefined){
+      errorCity.innerHTML = "Vous devez préciser dans quelle ville etait ces évènements.";
+      isGetRadioButtonValid = false;
+    }else{
+      isGetRadioButtonValid = true;
+      errorCity.innerHTML = "";
+    }
+  
+    // Vérification du champ CONDITION UTILISATION
+    const conditionUser = document.getElementById('checkbox1');
+    let conditionsUserValue = conditionUser.checked;
+  
+    if (conditionsUserValue === false ){
+      errorConditionUser.innerHTML = "Vous devez accepter les conditions d'utilisateur"
+      isConditionUserValid = false;
+    } else{
+      conditionsUserValue = true; 
+      isConditionUserValid = true;
+      errorConditionUser.innerHTML = "";
+      
+    }
+  
+    // FIN de fonction avec affichage du message de validation
+    if (isFirstNameValid && isLastNameValid && isEmailValid && isQuantityValid && isGetRadioButtonValid && isBirthDateValid && isConditionUserValid){
+     
+      messageConfirmation();
+      closeModal();
+      removeData();
+    }
+     
+  
+  };
+  
