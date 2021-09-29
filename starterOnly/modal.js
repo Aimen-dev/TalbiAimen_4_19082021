@@ -11,7 +11,9 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const closeBtn = document.querySelector(".close")
+const closeBtn = document.querySelector(".close");
+const fenetreEnvoie = document.querySelector('.fenetre-envoi');
+
 
 
 // launch modal event
@@ -46,8 +48,14 @@ let firstnameRegExp = new RegExp ('[0-9]');
 let lastnameRegExp = new RegExp ('[0-9]');
 
 // DOM champs d'erreurs
-const error = document.querySelector(".error");
+const errorFirstName = document.querySelector(".errorFirstName");
+const errorLastName = document.querySelector(".errorLastName");
+const erroreMail = document.querySelector(".erroremail");
+const errorBirthdate = document.querySelector(".errorbirthdate");
+const errorQuantity = document.querySelector(".errorquantity");
 const checkIcon = document.querySelector(".checkbox-input");
+const errorCity = document.querySelector(".errorcity");
+const errorConditionUser = document.querySelector(".errorconditionuser");
 let erreur = 0;
 
 // validation au moment du clique sur "SUBMIT"
@@ -67,7 +75,7 @@ function validate(a) {
     let isConditionUserValid = false;
   
     // Vérification du champ PRENOM
-    if(А() == ""){
+    if(firstName.value.trim() == ""){
       errorFirstName.innerHTML = "Vous devez écrire votre prénom.";
       firstName.style.border = "2px solid #fe152f";
       isFirstNameValid = false;
@@ -169,3 +177,37 @@ function validate(a) {
   
   };
   
+  /*---- fonction qui compose la partie validate-----*/
+
+// Fonction de vérification des emails
+function emailIsValid (email) {
+  return /\S+@\S+\.\S+/.test(email)
+}
+
+
+// Fonction de vérification des boutons radios
+function getRadioButton(radioBouton){
+ let choix;
+
+ for (let radio of radioBouton){
+   if (radio.checked){
+     choix = radio.value;
+   }
+ }
+ return choix;
+}
+
+
+function removeData() {
+firstName.value ="";
+lastName.value="";
+eMail.value="";
+birthDate.value="";
+quantity.value="";
+conditionUser.checked="";
+}
+
+
+function messageConfirmation(){
+fenetreEnvoie.style.display = "block";
+}

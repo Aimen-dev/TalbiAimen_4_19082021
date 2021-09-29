@@ -275,9 +275,33 @@ input {
   height: 48px;
 }
 
-.error{
+.errorFirstName{
 font-size: small;
 color:#fe152f
+}
+.errorLastName{
+  font-size: small;
+  color:#fe152f
+}
+.erroremail{
+  font-size: small;
+  color:#fe152f
+}
+.errorbirthdate{
+  font-size: small;
+  color:#fe152f
+}
+.errorquantity{
+  font-size: small;
+  color:#fe152f
+}
+.errorcity{
+  font-size: small;
+  color:#fe152f
+}
+.errorconditionuser{
+  font-size: small;
+  color:#fe152f
 }
 
 .formData[data-error]::after {
