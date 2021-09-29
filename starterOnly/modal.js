@@ -33,7 +33,7 @@ function closeModal () {
 
 /*----------------------- GESTION  DU FORMULAIRE -------------------------*/
 
-// Variables 
+// DOM formulaire de saisie
 const form = document.getElementById("formulaire");
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -45,15 +45,9 @@ const inputs = document.getElementsByTagName('input');
 let firstnameRegExp = new RegExp ('[0-9]');
 let lastnameRegExp = new RegExp ('[0-9]');
 
-// Variables champs d'erreurs
-const errorFirstName = document.querySelector(".errorFirstName");
-const errorLastName = document.querySelector(".errorLastName");
-const erroreMail = document.querySelector(".erroremail");
-const errorBirthdate = document.querySelector(".errorbirthdate");
-const errorQuantity = document.querySelector(".errorquantity");
+// DOM champs d'erreurs
+const error = document.querySelector(".error");
 const checkIcon = document.querySelector(".checkbox-input");
-const errorCity = document.querySelector(".errorcity");
-const errorConditionUser = document.querySelector(".errorconditionuser");
 let erreur = 0;
 
 // validation au moment du clique sur "SUBMIT"
