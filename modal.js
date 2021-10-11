@@ -68,7 +68,7 @@ function validate(a) {
     let isBirthDateValid = false;
     let isQuantityValid = false;
     let isGetRadioButtonValid = false;
-    let isConditionUserValid = true;
+    let isConditionUserValid = false;
 
     // Vérification du champ PRENOM
     if (firstName.value.trim() == "") {
