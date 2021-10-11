@@ -152,7 +152,7 @@ function validate(a) {
     }
 
     // Vérification du champ CONDITION UTILISATION
-    const conditionUser = document.getElementById("checkbox1") = false;
+    const conditionUser = document.getElementById("checkbox1");
     let conditionsUserValue = conditionUser.checked;
 
     if (conditionsUserValue === false) {
