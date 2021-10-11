@@ -153,7 +153,7 @@ function validate(a) {
 
     // Vérification du champ CONDITION UTILISATION
     const conditionUser = document.getElementById("checkbox1");
-    let conditionsUserValue = conditionUser;
+    let conditionsUserValue = conditionUser.checked;
 
     if (conditionsUserValue === false) {
         errorConditionUser.innerHTML =
@@ -206,7 +206,7 @@ function removeData() {
     eMail.value = "";
     birthDate.value = "";
     quantity.value = "";
-    conditionUser = "";
+    conditionUser.checked = "";
 }
 
 function messageConfirmation() {
